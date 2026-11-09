@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Sistemas Operativos</title>
+    <link rel="stylesheet" href="/blog-sistemas-operativos/css/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Conceptos y variables fundamentales de los sistemas operativos</h1>
+       
+    </header>
+
+    <nav>
+        <a href="#tema1">01. Conceptos</a>
+        <a href="#tema2">02. Arquitectura</a>
+        <a href="#tema3">03. Procesos</a>
+        <a href="#tema4">04. Planificación</a>
+    </nav>
+
+    <div class="layout-container">
+        <main>
+            <!-- ================= TEMA 1 ================= -->
+            <article id="tema1">
+                <span class="meta-info">Fundamentos</span>
+                <h2>💻 ¿Qué es un sistema operativo y qué tipos existen?</h2>
+                <p>Para responder a la pregunta de <strong>¿Qué es un sistema operativo?</strong>, debemos entenderlo como el programa más fundamental de una computadora. 
+                  Según Tanenbaum (2009), actúa en dos frentes: como una máquina extendida que oculta la verdad del hardware complejo y como un administrador de 
+                  recursos que ordena el caos de múltiples programas compitiendo por la CPU, la memoria y los discos.</p>
+                
+                <h3>¿Qué tipos de sistemas operativos existen?</h3>
+                <p>La historia y evolución del hardware nos ha dejado una variedad enorme de sistemas operativos para mejorar distintas necesidades:</p>
+                <ul>
+                    <li><strong>SO de Mainframes:</strong> Diseñados para procesar grandes lotes de datos y transacciones masivas.</li>
+                    <li><strong>SO de Servidores:</strong> Sistemas operativos como Linux y Windows Server, que operan a través de redes.</li>
+                    <li><strong>SO de Ordenadores Personales:</strong> El enfoque aquí es la interfaz de usuario y la comodidad (Windows, macOS).</li>
+                    <li><strong>SO de Nodos Sensores:</strong> Sistemas diminutos para dispositivos de internet de las cosas (IoT).</li>
+                </ul>
+                
+                
+
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/26QPDBe-NB8" title="Sistemas Operativos" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="referencias">
+                    <strong>Referencias APA:</strong><br>
+                    Tanenbaum, A. (2009). Capítulo 1. Introducción. En <em>Sistemas operativos modernos</em> (pp. 3-33). Pearson Educación.
+                </div>
+            </article>
+
+            <article>
+                <span class="meta-info">Fundamentos</span>
+                <h2>🤖 ¿Qué es un Sistema Operativo no convencional?</h2>
+                <p>Un sistema operativo no convencional, son aquellos que no interactúan directamente con 
+                  un usuario humano a través de una pantalla y teclado típicos, sino que están inmersos en dispositivos especializados con recursos limitados o con 
+                  exigencias críticas de tiempo.</p>
+                <p>Los más destacados son los <strong>Sistemas Operativos de Tiempo Real (RTOS)</strong>. A diferencia de tu ordenador personal,
+                   en un RTOS el tiempo es cuestión de vida o muerte. Se usan en marcapasos médicos, sistemas de frenado ABS en vehículos y en plataformas de robótica 
+                   móvil. En estos sistemas, cumplir con una restricción de tiempo es tan importante como dar el resultado correcto.</p>
+                
+                <img src="/blog-sistemas-operativos/img/rtos-robot.jpg" alt="Sistema Operativo de Tiempo Real en Robótica" class="multimedia" onerror="this.src='https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800'">
+                <p class="image-caption">Figura 2. Implementación de RTOS en robótica móvil. Concepto de Miguélez et al. (2020).</p>
+
+                <div class="comunidad">
+                    <strong>💬 Foro de Comunidad:</strong> ¿Conoces algún dispositivo en tu casa que use un sistema operativo embebido? ¡Deja tu comentario abajo y analicemos su funcionamiento juntos!
+                </div>
+
+                <div class="referencias">
+                    <strong>Referencias APA:</strong><br>
+                    Miguélez, C., et al. (2020). Implementación de sistema operativo robótico en una plataforma de robot móvil. <em>Revista de Ingeniería Electrónica, Automática y Comunicaciones</em>, 41(3), 79-92.<br>
+                    Tanenbaum, A. (2009). Capítulo 1. Introducción. En <em>Sistemas operativos modernos</em> (pp. 3-33). Pearson Educación.
+                </div>
+            </article>
+
+            <!-- ================= TEMA 2 ================= -->
+            <article id="tema2">
+                <span class="meta-info">Estructura Interna</span>
+                <h2>🏗️ ¿Qué es la arquitectura de un Sistema Operativo y sus componentes?</h2>
+                <p>La arquitectura de un sistema operativo es la estructura interna y la organización lógica del software que controla la máquina. Es el diseño de cómo las distintas piezas de 
+                  código se ensamblan y se comunican entre sí para operar de manera segura.</p>
+                
+                <h3>¿Cuáles son los componentes de una arquitectura de un sistema operativo?</h3>
+                <p>Ladrón (2018) y Serna & Allende (2020) exponen que la base arquitectónica se divide fundamentalmente en:</p>
+                <ul>
+                    <li><strong>Gestor de Procesos:</strong> Encargado de la creación, planificación y destrucción de los procesos.</li>
+                    <li><strong>Gestor de Memoria:</strong> Asigna el espacio en RAM para que los programas puedan ejecutarse.</li>
+                    <li><strong>Gestor de Entrada/Salida:</strong> Maneja los <em>drivers</em> y controladores de hardware.</li>
+                    <li><strong>Gestor de Archivos (El caso Linux):</strong> Abstrae los datos físicos en discos. En sistemas como Linux, "todo es un archivo".</li>
+                </ul>
+                
+                <img src="/blog-sistemas-operativos/img/arquitectura.jpg" alt="Componentes de la arquitectura de un SO" class="multimedia" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800'">
+                <p class="image-caption">Figura 3. Componentes principales del hardware y software. Basado en Ladrón (2018).</p>
+
+                <div class="referencias">
+                    <strong>Referencias APA:</strong><br>
+                    Ladrón, M. (2018). Capítulo 1. Introducción al ordenador. En <em>Sistema operativo</em> (pp. 5-17). Editorial Tutor Formación.<br>
+                    Serna, M. & Allende, S. (2020). Capítulos 2, 3 y 4. En <em>Sistemas operativos: Linux</em> (pp. 27-55). Universitas.
+                </div>
+            </article>
+
+            <article>
+                <span class="meta-info">Estructura Interna</span>
+                <h2>🧩 ¿Qué tipos de arquitectura existen?</h2>
+                <p>La forma en que se estructuran los componentes mencionados anteriormente define el diseño central del núcleo (kernel). Existen varios <strong>tipos de arquitectura:</strong></p>
+                <ul>
+                    <li><strong>Arquitectura Monolítica:</strong> Todo el sistema operativo es un solo programa binario enorme que se ejecuta en modo núcleo. Linux es el ejemplo clásico.
+                       Es increíblemente rápido, pero un fallo en un componente menor puede tumbar todo el sistema.</li>
+                    <li><strong>Microkernel (Micronúcleo):</strong> Divide el sistema en pequeños módulos. Solo lo estrictamente necesario corre en modo núcleo,
+                       mientras que el resto de componentes operan en modo usuario. Es altamente confiable y seguro.</li>
+                    <li><strong>Arquitectura Cliente-Servidor:</strong> Una variación del microkernel donde las aplicaciones 
+                      funcionan como clientes que solicitan servicios a procesos servidores.</li>
+                </ul>
+
+                <img src="/blog-sistemas-operativos/img/microkernel.jpg" alt="Arquitectura Monolítica vs Microkernel" class="multimedia" onerror="this.src='https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800'">
+                <p class="image-caption">Figura 4. Diagrama conceptual: Monolítico vs Microkernel. Adaptado de Tanenbaum (2009).</p>
+
+                <div class="referencias">
+                    <strong>Referencias APA:</strong><br>
+                    Tanenbaum, A. (2009). Capítulo 1. Introducción. En <em>Sistemas operativos modernos</em> (pp. 34-71). Pearson Educación.
+                </div>
+            </article>
+
+            <!-- ================= TEMA 3 ================= -->
+            <article id="tema3">
+                <span class="meta-info">Ejecución</span>
+                <h2>⚡ ¿Qué es un proceso en sistemas operativos?</h2>
+                <p>Un proceso en sistemas operativos, la definición clásica según Cura (2020) es que un proceso es un "programa en ejecución". Mientras que un programa es solo un archivo 
+                  en tu disco duro (entidad pasiva), un proceso es una entidad activa. Posee un hilo de ejecución, un contador de programa, registros y variables en memoria.</p>
+                
+                <h3>Estados de un proceso</h3>
+                <p>Dado que la CPU alterna rápidamente entre ellos para generar la ilusión de multitarea, los procesos transitan por tres estados fundamentales:</p>
+                <ol>
+                    <li><strong>En ejecución (Running):</strong> Usando la CPU en ese milisegundo exacto.</li>
+                    <li><strong>Listo (Ready):</strong> Preparado para ejecutarse, esperando que el planificador le asigne tiempo.</li>
+                    <li><strong>Bloqueado (Blocked):</strong> Pausado temporalmente hasta que ocurra un evento externo, como la lectura de un archivo.</li>
+                </ol>
+
+                <img src="/blog-sistemas-operativos/img/estados-proceso.jpg" alt="Diagrama de estados de un proceso" class="multimedia" onerror="this.src='https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&q=80&w=800'">
+                <p class="image-caption">Figura 5. Modelo de tres estados de un proceso. Recuperado de los conceptos de Cura (2020).</p>
+
+                <div class="referencias">
+                    <strong>Referencias APA:</strong><br>
+                    Cura, N. (2020). Capítulo 5. Procesos. En <em>Fundamentos de sistemas operativos</em> (pp. 229-256). Universitas.<br>
+                    Tanenbaum, A. (2009). Capítulo 2. Introducción. En <em>Sistemas operativos modernos</em> (pp. 83-100). Pearson Educación.
+                </div>
+            </article>
+
+            <article>
+                <span class="meta-info">Ejecución</span>
+                <h2>⚠️ ¿Qué tipos de procesos existen, cuáles son sus características y qué problemas presentan?</h2>
+                <p>Lo procesos  podemos clasificarlos según su comportamiento:</p>
+                <ul>
+                    <li><strong>Limitados por CPU (CPU-bound):</strong> Consumen todo su tiempo haciendo cálculos matemáticos pesados.</li>
+                    <li><strong>Limitados por E/S (I/O-bound):</strong> Pasan la mayor parte del tiempo en estado "bloqueado" esperando que el disco duro o la red respondan.</li>
+                </ul>
+                <h3>Que problemas presentan</h3>
+                <p>Cuando los procesos intentan colaborar o compartir recursos, se enfrentan a graves problemas descritos por Tanenbaum (2009):</p>
+                <ul>
+                    <li><strong>Condición de carrera (Race Condition):</strong> Ocurre cuando dos procesos acceden a una memoria compartida al mismo tiempo. El resultado final se vuelve impredecible.</li>
+                    <li><strong>Interbloqueo (Deadlock):</strong> Ocurre cuando el Proceso A tiene el recurso 1 y espera el 2, pero el Proceso B tiene el recurso 2 y espera el 1. Ambos se quedan esperando eternamente.</li>
+                </ul>
+
+               
+                 
+
+                <div class="referencias">
+                    <strong>Referencias APA:</strong><br>
+                    Tanenbaum, A. (2009). Capítulo 2. Introducción. En <em>Sistemas operativos modernos</em> (pp. 145-162). Pearson Educación.
+                </div>
+            </article>
+
+            <!-- ================= TEMA 4 ================= -->
+            <article id="tema4">
+                <span class="meta-info">Optimización</span>
+                <h2>🧠 ¿Qué es un algoritmo de planificación?</h2>
+                <p>En un sistema multitarea moderno, frecuentemente hay decenas de procesos en estado "Listo", pero solo un procesador para atenderlos.</p>
+                <p>Un algoritmo de planificación es el conjunto de reglas y lógica matemática que utiliza el componente del sistema operativo llamado planificador para decidir qué proceso debe 
+                  ejecutarse a continuación y por cuánto tiempo. Su objetivo principal es maximizar la equidad, mantener la CPU ocupada el 100% del tiempo y minimizar el tiempo de espera del usuario.</p>
+                
+                <img src="/blog-sistemas-operativos/img/cpu-scheduler.jpg" alt="Esquema del planificador de CPU" class="multimedia" onerror="this.src='https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&q=80&w=800'">
+
+                <div class="comunidad">
+                    <strong>🤝 Intercambio de conocimientos:</strong> Como ingenieros en formación, ¿cuál creen que es el métrico más importante para medir la calidad de un planificador? ¿Rendimiento puro o tiempo de respuesta?
+                </div>
+
+                <div class="referencias">
+                    <strong>Referencias APA:</strong><br>
+                    Cura, N. (2020). Capítulo 5. Procesos. En <em>Fundamentos de sistemas operativos</em> (pp. 229-256). Universitas.
+                </div>
+            </article>
+
+            <article>
+                <span class="meta-info">Optimización</span>
+                <h2>⚙️ ¿Existen tipos de algoritmos de planificación?</h2>
+                <p>Absolutamente. Respondiendo a <strong>¿Existen tipos de algoritmos de planificación?</strong>, la respuesta depende del entorno del sistema operativo. Cura (2020) detalla los más importantes:</p>
+                <ul>
+                    <li><strong>Planificación no apropiativa:</strong> Una vez que se le da la CPU a un proceso, este no se le puede quitar hasta que termine o se bloquee voluntariamente.
+                        <ul>
+                            <li><em>First-Come, First-Served (FCFS):</em> El primero en llegar a la cola es el primero en ser atendido.</li>
+                            <li><em>Shortest Job First (SJF):</em> Ejecuta primero el proceso que requiere menos tiempo de CPU.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Planificación apropiativa (Preemptive):</strong> El SO tiene el poder de suspender un proceso a la fuerza.
+                        <ul>
+                            <li><em>Round Robin:</em> El más usado. A cada proceso se le da un intervalo de tiempo fijo (quantum). Si no termina en ese tiempo, la CPU pasa al siguiente en la fila.</li>
+                            <li><em>Planificación por Prioridad:</em> Los procesos se agrupan por jerarquía. Los procesos del sistema tienen prioridad sobre los procesos del usuario común.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+              
+
+                <div class="referencias">
+                    <strong>Referencias APA:</strong><br>
+                    Cura, N. (2020). Capítulo 5. Procesos. En <em>Fundamentos de sistemas operativos</em> (pp. 229-256). Universitas.
+                </div>
+            </article>
+
+        </main>
+
+        <aside class="sidebar">
+            <div class="perfil">
+                <img src="/blog-sistemas-operativos/img/perfil.jpg" alt="Juan Sebastián" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=JS'">
+                <h3>Juan Sebastián Suárez Rodríguez</h3>
+                <p>Ingenieria de Software<br>Corportación Universitaria Minuto de Dios</p>
+                <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid var(--border-color);">
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Nombre del docente: James Gabriel Jaramillo Zambrano Asignatura: NRC – 820 Sistemas Operativos
+</p>
+            </div>
+        </aside>
+
+    </div>
+
+    <script src="/blog-sistemas-operativos/js/main.js"></script>
+</body>
+</html>
